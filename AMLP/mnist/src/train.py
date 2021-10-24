@@ -8,8 +8,10 @@ from sklearn import tree
 import config
 import model_dispatcher
 
+# https://www.kaggle.com/oddrationale/mnist-in-csv?select=mnist_train.csv
 
-def run(fold, model):
+
+def run(fold: int, model: str):
     df = pd.read_csv(config.TRAINING_FILE)
 
     df_train = df[df.kfold != fold].reset_index(drop=True)
@@ -30,7 +32,7 @@ def run(fold, model):
     print(f"Fold={fold}, Accuracy={accuracy}")
 
     joblib.dump(clf, os.path.join(
-        config.MODEL_OUTPUT, f"../model/dt_{fold}.bin"))
+        config.MODEL_OUTPUT, f"dt_{fold}.bin"))
 
 
 if __name__ == "__main__":

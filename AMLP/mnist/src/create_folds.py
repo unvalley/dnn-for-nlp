@@ -2,6 +2,7 @@ from sklearn import model_selection
 import pandas as pd
 import config
 
+# 交差検証用
 if __name__ == "__main__":
     train_path = config.TRAINING_FILE_ORIGINAL
     df = pd.read_csv(train_path)
