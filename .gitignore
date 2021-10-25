@@ -1,4 +1,5 @@
 .DS_Store
 
 mnist_train.csv
+mnist_train_folds.csv
 models/
